@@ -16,6 +16,8 @@
 
 FROM ibmcom/ibmnode:6
 
+RUN apt-get update && apt-get dist-upgrade -y && apt-get autoremove -y && rm -rf /var/lib/apt/lists/*
+
 ARG APP_BUILD_NUMBER=latest
 ENV NODE_ENV production
 ENV PORT 80
